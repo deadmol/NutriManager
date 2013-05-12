@@ -114,6 +114,7 @@
             this.Txt_Ig_Recherche.Name = "Txt_Ig_Recherche";
             this.Txt_Ig_Recherche.Size = new System.Drawing.Size(118, 20);
             this.Txt_Ig_Recherche.TabIndex = 8;
+            this.Txt_Ig_Recherche.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Ig_Recherche_KeyUp);
             // 
             // Lbl_Ig_Recherche
             // 
@@ -142,6 +143,7 @@
             this.Btn_Ig_Modifier.TabIndex = 11;
             this.Btn_Ig_Modifier.Text = "Modifier";
             this.Btn_Ig_Modifier.UseVisualStyleBackColor = true;
+            this.Btn_Ig_Modifier.Click += new System.EventHandler(this.Btn_Ig_Modifier_Click);
             // 
             // Btn_Ig_Supprimer
             // 
@@ -152,8 +154,9 @@
             this.Btn_Ig_Supprimer.TabIndex = 12;
             this.Btn_Ig_Supprimer.Text = "Supprimer";
             this.Btn_Ig_Supprimer.UseVisualStyleBackColor = true;
+            this.Btn_Ig_Supprimer.Click += new System.EventHandler(this.Btn_Ig_Supprimer_Click);
             // 
-            // Ingrédients
+            // Ingredients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,7 +174,7 @@
             this.Controls.Add(this.Txt_Ig_Qte);
             this.Controls.Add(this.Lbl_Ig_Nom);
             this.Controls.Add(this.Txt_Ig_Nom);
-            this.Name = "Ingrédients";
+            this.Name = "Ingredients";
             this.Text = "Ingrédients";
             this.Load += new System.EventHandler(this.Ingrédients_Load);
             this.ResumeLayout(false);

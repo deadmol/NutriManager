@@ -13,6 +13,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -61,23 +61,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ingredients.cs" />
-    <Compile Include="Db_NutriManagerDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Db_NutriManagerDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Ingrédients.cs">
+    <Compile Include="Categories.cs" />
+    <Compile Include="Ingredient.cs" />
+    <Compile Include="Ingredients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ingrédients.Designer.cs">
-      <DependentUpon>Ingrédients.cs</DependentUpon>
+    <Compile Include="Ingredients.Designer.cs">
+      <DependentUpon>Ingredients.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NutriManagerDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NutriManagerDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +88,9 @@
     <Compile Include="Recette.Designer.cs">
       <DependentUpon>Recette.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Ingrédients.resx">
-      <DependentUpon>Ingrédients.cs</DependentUpon>
+    <Compile Include="Recettes.cs" />
+    <EmbeddedResource Include="Ingredients.resx">
+      <DependentUpon>Ingredients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -106,16 +108,16 @@
       <DependentUpon>Recette.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Db_NutriManagerDataSet.xsc">
-      <DependentUpon>Db_NutriManagerDataSet.xsd</DependentUpon>
+    <None Include="NutriManagerDBDataSet.xsc">
+      <DependentUpon>NutriManagerDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Db_NutriManagerDataSet.xsd">
+    <None Include="NutriManagerDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Db_NutriManagerDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>NutriManagerDBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Db_NutriManagerDataSet.xss">
-      <DependentUpon>Db_NutriManagerDataSet.xsd</DependentUpon>
+    <None Include="NutriManagerDBDataSet.xss">
+      <DependentUpon>NutriManagerDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -148,11 +150,36 @@
       <ProductName>SQL Server Compact 3.5 SP2</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express Edition</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
       <Visible>False</Visible>
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NutriManagerDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NutriManagerDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>NutriManagerDB.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{4BF6A5C7-B4C6-4663-B57F-40C1EBE1AAE0}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

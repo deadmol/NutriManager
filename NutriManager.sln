@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutriManager", "NutriManager\NutriManager.csproj", "{081B121D-A266-4A0D-B213-F3E83AA6D379}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{F82319EB-8DAC-4B20-ABA8-B96A96AEC037}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{4BF6A5C7-B4C6-4663-B57F-40C1EBE1AAE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{081B121D-A266-4A0D-B213-F3E83AA6D379}.Debug|x86.Build.0 = Debug|x86
 		{081B121D-A266-4A0D-B213-F3E83AA6D379}.Release|x86.ActiveCfg = Release|x86
 		{081B121D-A266-4A0D-B213-F3E83AA6D379}.Release|x86.Build.0 = Release|x86
-		{F82319EB-8DAC-4B20-ABA8-B96A96AEC037}.Debug|x86.ActiveCfg = Debug|x86
-		{F82319EB-8DAC-4B20-ABA8-B96A96AEC037}.Debug|x86.Build.0 = Debug|x86
-		{F82319EB-8DAC-4B20-ABA8-B96A96AEC037}.Release|x86.ActiveCfg = Release|x86
-		{F82319EB-8DAC-4B20-ABA8-B96A96AEC037}.Release|x86.Build.0 = Release|x86
+		{4BF6A5C7-B4C6-4663-B57F-40C1EBE1AAE0}.Debug|x86.ActiveCfg = Debug|x86
+		{4BF6A5C7-B4C6-4663-B57F-40C1EBE1AAE0}.Debug|x86.Build.0 = Debug|x86
+		{4BF6A5C7-B4C6-4663-B57F-40C1EBE1AAE0}.Release|x86.ActiveCfg = Release|x86
+		{4BF6A5C7-B4C6-4663-B57F-40C1EBE1AAE0}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,11 +10,11 @@ namespace NutriManager
         #region Fields
 
         private int _ID;
-        private string _TITRE;
+        private string _NOM;
+        private int _PREPARATION;
+        private int _CUISSON;
+        private int _NBPERS;    
         private string _DETAILS;
-        private TimeSpan _TPSPREPA;
-        private TimeSpan _TPSCUISSON;
-        private int _NBPERS;
 
         #endregion
 
@@ -26,28 +26,22 @@ namespace NutriManager
             set { _ID = value; }
         }
 
-        public string TITRE
+        public string NOM
         {
-            get { return _TITRE; }
-            set { _TITRE = value; }
+            get { return _NOM; }
+            set { _NOM = value; }
         }
 
-        public string DETAILS
+        public int PREPARATION
         {
-            get { return _DETAILS; }
-            set { _DETAILS = value; }
+            get { return _PREPARATION; }
+            set { _PREPARATION = value; }
         }
 
-        public TimeSpan TPSPREPA
+        public int CUISSON
         {
-            get { return _TPSPREPA; }
-            set { _TPSPREPA = value; }
-        }
-
-        public TimeSpan TPSCUISSON
-        {
-            get { return _TPSCUISSON; }
-            set { _TPSCUISSON = value; }
+            get { return _CUISSON; }
+            set { _CUISSON = value; }
         }
 
         public int NBPERS
@@ -56,18 +50,27 @@ namespace NutriManager
             set { _NBPERS = value; }
         }
 
+        public string DETAILS
+        {
+            get { return _DETAILS; }
+            set { _DETAILS = value; }
+        }
         #endregion
 
-        #region Constructor
+        #region Constructors
+
+        public Recettes(int id, string nom = "", string details = "", int preparation = 0, int cuisson = 0, int nbpers = 0)
+        {
+            _ID = id;
+            _NOM = nom;
+            _DETAILS = details;
+            _PREPARATION = preparation;
+            _CUISSON = cuisson;
+            _NBPERS = nbpers;
+        }
 
         public Recettes()
         {
-            _ID = 0;
-            _TITRE = "";
-            _DETAILS = "";
-            _TPSPREPA = new TimeSpan();
-            _TPSCUISSON = new TimeSpan();
-            _NBPERS = 0;
         }
 
         #endregion

@@ -13,6 +13,7 @@ namespace NutriManager
         private string _LIB;
         private int _QTE;
         private string _QTELIB;
+        private string _CATEGORIE;
 
         #endregion
 
@@ -42,16 +43,23 @@ namespace NutriManager
             set { _QTELIB = value; }
         }
 
+        public string CATEGORIE
+        {
+            get { return _CATEGORIE; }
+            set { _CATEGORIE = value; }
+        }
+
         #endregion
 
         #region Constructor
 
-        public Ingredient(int id, string lib = "Nouvel ingrédient", int qte = 0, string qtelib = "")
+        public Ingredient(int id, string lib = "Nouvel ingrédient", int qte = 0, string qtelib = "", string categorie = "")
         {
             _ID = id;
             _LIB = lib;
             _QTE = qte;
             _QTELIB = qtelib;
+            _CATEGORIE = categorie;
         }
 
         public Ingredient()
